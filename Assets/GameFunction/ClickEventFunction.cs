@@ -18,12 +18,8 @@ public class ClickEventFunction : MonoBehaviour
 
 	public void clickEvent ()
 	{
-		float x, y, z;
-		x = Random.Range (0.0f, 360.0f);
-		y = Random.Range (0.0f, 360.0f);
-		z = Random.Range (0.0f, 360.0f);
-
-		targetObject.GetComponent<Transform> ().Rotate (x, y, z);
+		
+		targetObject.transform.rotation = Quaternion.Euler (Random.Range (0.0f, 360.0f), Random.Range (0.0f, 360.0f), 0);
 
 		score--;
 		if (score <= 0) {
