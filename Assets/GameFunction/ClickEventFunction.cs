@@ -9,6 +9,8 @@ public class ClickEventFunction : MonoBehaviour
 	public int score = 100;
 	public GameObject targetObject;
 
+	public Vector3 worldPos;
+
 	public string viewString = "残り";
 
 	void Start ()
@@ -21,6 +23,7 @@ public class ClickEventFunction : MonoBehaviour
 		
 		targetObject.transform.rotation = Quaternion.Euler (Random.Range (0.0f, 360.0f), Random.Range (0.0f, 360.0f), 0);
 
+		targetObject.GetComponent<Renderer> ().material.color = new Color (Random.value, Random.value, Random.value, 1.0f);
 		score--;
 		if (score <= 0) {
 			testText.text = viewString + score;
